@@ -1,8 +1,7 @@
 # Add the import statements for functions from string_utils.py and equation_utils.py here
 import sympy
-from sympy import symbols, Eq, solve as sympy_solve
-
-import string_utils, equation_utils
+import string_utils
+import equation_utils
 
 def balance_reaction(reaction): #"Fe2O3 + H2 -> Fe + H2O"
 

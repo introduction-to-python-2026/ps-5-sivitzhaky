@@ -1,5 +1,8 @@
 # Add the import statements for functions from string_utils.py and equation_utils.py here
 #import string_utils
+import sympy
+from sympy import symbols, Eq, solve as sympy_solve
+
 def split_by_capitals(formula): #Splits a chemical formula (string) into a *list* of elements based on uppercase letters
   ret = []
   start = 0

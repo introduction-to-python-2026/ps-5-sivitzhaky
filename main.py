@@ -1,23 +1,6 @@
 # Add the import statements for functions from string_utils.py and equation_utils.py here
-import importlib
 import string_utils
 import equation_utils
-
-importlib.reload(string_utils)
-importlib.reload(equation_utils)
-
-from string_utils import (
-    split_by_capitals,
-    split_at_digit,
-    count_atoms_in_molecule,
-    parse_chemical_reaction,
-    count_atoms_in_reaction
-)
-
-from equation_utils import (
-    build_equations,
-    my_solve
-)
 
 def balance_reaction(reaction): #"Fe2O3 + H2 -> Fe + H2O"
 

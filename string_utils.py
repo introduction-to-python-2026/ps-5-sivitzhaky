@@ -1,4 +1,4 @@
-def split_before_uppercases(formula): #Splits a chemical formula (string) into a *list* of elements based on uppercase letters
+def split_by_capitals(formula): #Splits a chemical formula (string) into a *list* of elements based on uppercase letters
   ret = []
   start = 0
   if not formula:  
@@ -28,7 +28,7 @@ def count_atoms_in_molecule(molecular_formula):
 
     retDict = {} # Step 1: Initialize an empty dictionary to store atom counts
 
-    for atom in split_before_uppercases(molecular_formula):
+    for atom in split_by_capitals(molecular_formula):
         atom_name, atom_count = split_at_digit(atom)    # Step 2: Update the dictionary with the atom name and count
         retDict[atom_name]=atom_count
 

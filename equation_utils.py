@@ -1,5 +1,6 @@
 # Add the import statements for necessary sympy functions here
-
+import sympy
+from sympy import symbols, Eq, solve as sympy_solve
 
 ELEMENTS = [
     'H', 'He', 'Li', 'Be', 'B', 'C', 'N', 'O', 'F', 'Ne',

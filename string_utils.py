@@ -1,24 +1,38 @@
+def split_before_uppercases(formula): #Splits a chemical formula (string) into a *list* of elements based on uppercase letters
+  ret = []
+  start = 0
+  if not formula:  
+    return []
+  for i in range(1,len(formula)): 
+    if formula[i].isupper():
+      ret.append(formula[start:i])
+      start = i
+  ret.append(formula[start:])
+  return ret
 
+def split_at_digit(formula): #Splits an element string into a tuple of (element name, count)
+  num = 0
+  for i in range(len(formula)):
+    if formula[i].isdigit():
+      num=i
+      break
+  if num>0:
+    return (formula[:i], int(formula[i:]))
+  else:
+    return (formula, 1)
 
-
-def split_before_uppercases(formula):
-    pass  # replace the pass with your code
-
-def split_at_digit(formula):
-    pass  # replace the pass with your code
 
 def count_atoms_in_molecule(molecular_formula):
-    """Takes a molecular formula (string) and returns a dictionary of atom counts.  
+    """Takes a molecular formula (string) and returns a dictionary of atom counts.
     Example: 'H2O' → {'H': 2, 'O': 1}"""
 
-    # Step 1: Initialize an empty dictionary to store atom counts
+    retDict = {} # Step 1: Initialize an empty dictionary to store atom counts
 
-    for atom in split_by_capitals(molecular_formula):
-        atom_name, atom_count = split_at_number(atom)
-        
-        # Step 2: Update the dictionary with the atom name and count
+    for atom in split_before_uppercases(molecular_formula):
+        atom_name, atom_count = split_at_digit(atom)    # Step 2: Update the dictionary with the atom name and count
+        retDict[atom_name]=atom_count
 
-    # Step 3: Return the completed dictionary
+    return retDict # Step 3: Return the completed dictionary
 
 
 
